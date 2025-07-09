@@ -1,102 +1,100 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+
+// 仮アイコン（SVG）
+const IconWork = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#4B3B39" strokeWidth="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#4B3B39" strokeWidth="2"/></svg>
+);
+const IconAbout = () => (
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4B3B39" strokeWidth="2"/><path d="M12 16v-4" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="8" r="1" fill="#4B3B39"/></svg>
+);
+const IconLinkedIn = () => (
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#4B3B39" strokeWidth="2"/><path d="M7 10v6" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/><circle cx="7" cy="7" r="1" fill="#4B3B39"/><path d="M11 16v-3a2 2 0 0 1 4 0v3" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/></svg>
+);
+const IconMail = () => (
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#4B3B39" strokeWidth="2"/><path d="M3 7l9 6 9-6" stroke="#4B3B39" strokeWidth="2"/></svg>
+);
+
+const works = [
+  { src: "/work1.png", alt: "Work 1" },
+  { src: "/work2.png", alt: "Work 2" },
+  { src: "/work3.png", alt: "Work 3" },
+  { src: "/work4.png", alt: "Work 4" },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col bg-[#FCF9F6] text-[#4B3B39]">
+      {/* Header */}
+      <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
+        <span className="font-bold text-xl tracking-wide">Kie Yokozuka</span>
+        <nav className="flex items-center gap-2 sm:gap-4">
+          <Link href="#work" className="bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1">Work</Link>
+          <Link href="#about" className="hover:underline">About</Link>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconLinkedIn /></a>
+          <a href="mailto:hello@example.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* Main */}
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-8 flex flex-col gap-12">
+        {/* Hero */}
+        <section className="pt-12 pb-6" id="about">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Hello! I’m Kie and a UI/UX designer.</h1>
+          <p className="mb-2 text-lg">Check out my works and say hello<span className="ml-1">👋</span></p>
+          <p className="flex items-center gap-2 text-base">
+            <span className="inline-block"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4B3B39" strokeWidth="2"/><path d="M8 12h8" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/></svg></span>
+            See more detail <Link href="#about" className="underline font-semibold">about me</Link>
+          </p>
+        </section>
+
+        {/* Divider */}
+        <hr className="border-[#e5d8cf]" />
+
+        {/* My Works */}
+        <section id="work">
+          <div className="flex items-center gap-2 mb-6">
+            <span><IconWork /></span>
+            <h2 className="text-2xl font-bold">My Works</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {works.map((work, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden bg-white shadow-sm flex items-center justify-center aspect-[4/3]">
+                {/* 仮画像: public/にwork1.png等を後で追加 */}
+                <div className="w-full h-full flex items-center justify-center bg-[#e5d8cf]">
+                  <span className="text-[#b6a89e] text-lg">Work Image</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <hr className="border-[#e5d8cf]" />
+
+        {/* Contact */}
+        <section className="text-center py-8">
+          <p className="mb-2 text-lg">Get interested? <span className="font-bold text-xl">Contact Me!</span></p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#4B3B39] text-white rounded-full px-6 py-2 font-semibold justify-center"><IconLinkedIn /> LinkedIn</a>
+            <a href="mailto:hello@example.com" className="flex items-center gap-2 bg-[#4B3B39] text-white rounded-full px-6 py-2 font-semibold justify-center"><IconMail /> Email</a>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-[#4B3B39] text-white px-4 sm:px-12 py-6 mt-8">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="font-bold text-lg">Kie Yokozuka</span>
+          <nav className="flex items-center gap-4 text-sm">
+            <Link href="#work" className="flex items-center gap-1"><IconWork /> Work</Link>
+            <Link href="#about" className="flex items-center gap-1"><IconAbout /> About</Link>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="flex items-center gap-1"><IconLinkedIn /> LinkedIn</a>
+            <a href="mailto:hello@example.com" className="flex items-center gap-1"><IconMail /> Email</a>
+          </nav>
+        </div>
+        <div className="text-center text-xs mt-4">© 2025 All rights Reserved to Kie Yokozuka</div>
       </footer>
     </div>
   );
