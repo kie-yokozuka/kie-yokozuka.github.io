@@ -30,8 +30,9 @@ export default function Home() {
       <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
         <span className="font-bold text-xl tracking-wide">Kie Yokozuka</span>
         <nav className="flex items-center gap-2 sm:gap-4">
-          <Link href="#work" className="bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1">Work</Link>
-          <Link href="#about" className="hover:underline">About</Link>
+          <Link href="/" className="bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1">Home</Link>
+          <Link href="/work" className="hover:underline">Work</Link>
+          <Link href="/about" className="hover:underline">About</Link>
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconLinkedIn /></a>
           <a href="mailto:hello@example.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>
         </nav>
@@ -88,8 +89,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-bold text-lg">Kie Yokozuka</span>
           <nav className="flex items-center gap-4 text-sm">
-            <Link href="#work" className="flex items-center gap-1"><IconWork /> Work</Link>
-            <Link href="#about" className="flex items-center gap-1"><IconAbout /> About</Link>
+            <Link href="/" className="flex items-center gap-1">🏠 Home</Link>
+            <Link href="/work" className="flex items-center gap-1"><IconWork /> Work</Link>
+            <Link href="/about" className="flex items-center gap-1"><IconAbout /> About</Link>
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="flex items-center gap-1"><IconLinkedIn /> LinkedIn</a>
             <a href="mailto:hello@example.com" className="flex items-center gap-1"><IconMail /> Email</a>
           </nav>

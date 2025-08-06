@@ -13,8 +13,9 @@ export default function Header() {
     <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
       <span className="font-bold text-xl tracking-wide">Kie Yokozuka</span>
       <nav className="flex items-center gap-2 sm:gap-4">
-        <Link href="#work" className="bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1">Work</Link>
-        <Link href="#about" className="hover:underline">About</Link>
+        <Link href="/" className="hover:underline">Home</Link>
+        <Link href="/work" className="hover:underline">Work</Link>
+        <Link href="/about" className="bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1">About</Link>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconLinkedIn /></a>
         <a href="mailto:hello@example.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>
       </nav>
