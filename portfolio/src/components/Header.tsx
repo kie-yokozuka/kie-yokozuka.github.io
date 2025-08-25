@@ -24,7 +24,6 @@ export default function Header() {
     <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
       <span className="font-bold text-xl tracking-wide"><Image src="/images/logo.png" alt="Logo" width={160} height={300} style={{width: "auto"}} /></span>
       <nav className="flex items-center gap-2 sm:gap-4">
-        <Link href="/" className={getLinkStyle("/")}>Home</Link>
         <Link href="/work" className={getLinkStyle("/work")}>Work</Link>
         <Link href="/about" className={getLinkStyle("/about")}>About</Link>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconLinkedIn /></a>
