@@ -14,7 +14,16 @@ export default function Header() {
   const pathname = usePathname();
 
   const getLinkStyle = (href: string) => {
-    const isActive = pathname === href;
+    let isActive = false;
+    
+    if (href === "/") {
+      // Workリンクの場合、/（TOPページ）または/work/で始まるパスでアクティブ
+      isActive = pathname === "/" || (pathname ? pathname.startsWith("/work/") : false);
+    } else {
+      // その他のリンクは完全一致
+      isActive = pathname === href;
+    }
+    
     return isActive 
       ? "bg-white text-[#4B3B39] font-semibold rounded-full px-4 py-1 mr-1"
       : "hover:underline";
@@ -22,9 +31,11 @@ export default function Header() {
 
   return (
     <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
-      <span className="font-bold text-xl tracking-wide"><Image src="/images/logo.png" alt="Logo" width={160} height={300} style={{width: "auto"}} /></span>
+      <Link href="/" className="font-bold text-xl tracking-wide">
+        <Image src="/images/logo.png" alt="Logo" width={160} height={300} style={{width: "auto"}} />
+      </Link>
       <nav className="flex items-center gap-2 sm:gap-4">
-        <Link href="/work" className={getLinkStyle("/work")}>Work</Link>
+        <Link href="/" className={getLinkStyle("/")}>Work</Link>
         <Link href="/about" className={getLinkStyle("/about")}>About</Link>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconLinkedIn /></a>
         <a href="mailto:hello@example.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>

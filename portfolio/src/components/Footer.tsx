@@ -23,8 +23,8 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-1">🏠 Home</Link>
           <Link href="/work" className="flex items-center gap-1"><IconWork /> Work</Link>
           <Link href="/about" className="flex items-center gap-1"><IconAbout /> About</Link>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="flex items-center gap-1"><IconLinkedIn /> LinkedIn</a>
-          <a href="mailto:hello@example.com" className="flex items-center gap-1"><IconMail /> Email</a>
+          <a href="https://www.linkedin.com/in/kie-yokozuka/" target="_blank" rel="noopener" className="flex items-center gap-1"><IconLinkedIn /> LinkedIn</a>
+          <a href="mailto:kie.yokozuka@gmail.com" className="flex items-center gap-1"><IconMail /> Email</a>
         </nav>
       </div>
       <div className="text-center text-xs mt-4">© 2025 All rights Reserved to Kie Yokozuka</div>
