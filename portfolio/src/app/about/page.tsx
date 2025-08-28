@@ -4,33 +4,41 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ContactSection from "../../components/ContactSection";
 
-// アイコンコンポーネント
-const IconPerson = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="5" stroke="#4B3B39" strokeWidth="2"/>
-    <path d="M20 21c0-4.4-3.6-8-8-8s-8 3.6-8 8" stroke="#4B3B39" strokeWidth="2"/>
-  </svg>
+// Icon Components
+const IconFire = () => (
+  <span 
+    className="material-icons" 
+    style={{ color: '#4B3B39', fontSize: '24px' }}
+  >
+    local_fire_department
+  </span>
 );
 
 const IconCode = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <rect x="2" y="3" width="20" height="18" rx="2" stroke="#4B3B39" strokeWidth="2"/>
-    <path d="M8 9l-2 3 2 3" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M16 9l2 3-2 3" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
+  <span 
+    className="material-icons" 
+    style={{ color: '#4B3B39', fontSize: '24px' }}
+  >
+    code
+  </span>
 );
 
 const IconGraduation = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#4B3B39" strokeWidth="2"/>
-    <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="#4B3B39" strokeWidth="2"/>
-  </svg>
+  <span 
+    className="material-icons" 
+    style={{ color: '#4B3B39', fontSize: '24px' }}
+  >
+    school
+  </span>
 );
 
 const IconTree = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path d="M12 2v20M12 2c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z" stroke="#4B3B39" strokeWidth="2"/>
-  </svg>
+  <span 
+    className="material-icons" 
+    style={{ color: '#4B3B39', fontSize: '24px' }}
+  >
+    beach_access
+  </span>
 );
 
 export default function About() {
@@ -78,13 +86,13 @@ export default function About() {
               {/* With passions for... */}
               <div className="bg-[#FCF9F6] border border-[#4B3B39] rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <IconPerson />
-                  <h3 className="text-xl font-semibold">With passions for...</h3>
+                  <IconFire />
+                  <h3 className="text-xl font-semibold">With passions for ...</h3>
                 </div>
                 <ul className="space-y-2 text-lg">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[#4B3B39] rounded-full"></span>
-                    Prototyping
+                    Usability
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[#4B3B39] rounded-full"></span>
@@ -92,7 +100,7 @@ export default function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[#4B3B39] rounded-full"></span>
-                    Usability
+                    Prototyping
                   </li>
                 </ul>
               </div>
@@ -132,7 +140,7 @@ export default function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[#4B3B39] rounded-full"></span>
-                    CICCC UI/UX program
+                    CICCC UI/UX Program
                   </li>
                 </ul>
               </div>
