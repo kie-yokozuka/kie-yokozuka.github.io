@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import ContactSection from "../../../components/ContactSection";
 
 // アイコンコンポーネント
 const IconContents = () => (
@@ -454,29 +455,11 @@ export default function TableUpPage() {
           </div>
         </section>
 
+        {/* Divider */}
+        <hr className="border-[#e5d8cf]" />
+
         {/* Contact */}
-        <section className="text-center py-8">
-          <hr className="border-[#e5d8cf] mb-8" />
-          <p className="mb-2 text-lg">Get Impressed? <span className="font-bold text-xl">Contact Me!</span></p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="flex items-center gap-2 bg-[#4B3B39] text-white rounded-full px-6 py-2 font-semibold justify-center">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="4" stroke="white" strokeWidth="2"/>
-                <path d="M7 10v6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="7" cy="7" r="1" fill="white"/>
-                <path d="M11 16v-3a2 2 0 0 1 4 0v3" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              LinkedIn
-            </a>
-            <a href="mailto:hello@example.com" className="flex items-center gap-2 bg-[#4B3B39] text-white rounded-full px-6 py-2 font-semibold justify-center">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" strokeWidth="2"/>
-                <path d="M3 7l9 6 9-6" stroke="white" strokeWidth="2"/>
-              </svg>
-              Email
-            </a>
-          </div>
-        </section>
+        <ContactSection />
       </main>
       
       <Footer />
