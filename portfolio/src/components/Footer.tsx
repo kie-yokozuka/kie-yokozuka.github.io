@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const IconWork = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#fff" strokeWidth="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#fff" strokeWidth="2"/></svg>
@@ -7,9 +8,7 @@ const IconWork = () => (
 const IconAbout = () => (
   <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2"/><path d="M12 16v-4" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="8" r="1" fill="#fff"/></svg>
 );
-const IconLinkedIn = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#fff" strokeWidth="2"/><path d="M7 10v6" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><circle cx="7" cy="7" r="1" fill="#fff"/><path d="M11 16v-3a2 2 0 0 1 4 0v3" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
-);
+
 const IconMail = () => (
   <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" strokeWidth="2"/><path d="M3 7l9 6 9-6" stroke="#fff" strokeWidth="2"/></svg>
 );
@@ -23,7 +22,10 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-1">🏠 Home</Link>
           <Link href="/work" className="flex items-center gap-1"><IconWork /> Work</Link>
           <Link href="/about" className="flex items-center gap-1"><IconAbout /> About</Link>
-          <a href="https://www.linkedin.com/in/kie-yokozuka/" target="_blank" rel="noopener" className="flex items-center gap-1"><IconLinkedIn /> LinkedIn</a>
+          <a href="https://www.linkedin.com/in/kie-yokozuka/" target="_blank" rel="noopener" className="flex items-center gap-1">
+            <Image src="/images/InBug-White.png" alt="LinkedIn" width={24} height={24} />
+            LinkedIn
+          </a>
           <a href="mailto:kie.yokozuka@gmail.com" className="flex items-center gap-1"><IconMail /> Email</a>
         </nav>
       </div>
