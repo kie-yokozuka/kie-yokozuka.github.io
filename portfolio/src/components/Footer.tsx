@@ -10,7 +10,18 @@ const IconAbout = () => (
 );
 
 const IconMail = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" strokeWidth="2"/><path d="M3 7l9 6 9-6" stroke="#fff" strokeWidth="2"/></svg>
+  <span 
+    className="material-icons" 
+    style={{ 
+      color: '#FFFFFF', 
+      fontSize: '24px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    mail
+  </span>
 );
 
 export default function Footer() {
