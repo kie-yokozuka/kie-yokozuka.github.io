@@ -40,25 +40,28 @@ export default function About() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-96 md:h-[500px] overflow-hidden">
+        <section className="relative h-96 md:h-[640px] overflow-hidden">
           {/* Background Image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-blue-100 opacity-60"></div>
+          <Image
+            src="/images/Profile_About.jpg"
+            alt="Kie Yokozuka"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center 70%' }}
+            priority
+          />
           
-          <div className="relative h-full max-w-5xl mx-auto px-4 sm:px-8 flex items-center">
-            {/* Profile Image */}
-            <div className="w-1/2 h-full flex items-center justify-center">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">Profile Photo</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Text Content */}
-            <div className="w-1/2 h-full flex flex-col justify-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-2">Kie Yokozuka</h1>
-              <p className="text-xl md:text-2xl">UI/UX Designer</p>
+          {/* White Overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+          ></div>
+          
+          <div className="relative h-full max-w-5xl mx-auto px-4 sm:px-8 flex items-center justify-center">
+            {/* Text Content - Right aligned with compact width */}
+            <div className="text-right mr-0 ml-auto">
+              <h1 className="text-4xl md:text-6xl font-bold mb-2 text-[#4B3B39]">Kie Yokozuka</h1>
+              <p className="text-xl md:text-2xl text-[#4B3B39]">UI/UX Designer</p>
             </div>
           </div>
         </section>
