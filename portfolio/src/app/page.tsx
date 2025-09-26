@@ -47,7 +47,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {works.map((work, i) => (
               <div key={i} className="rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                <Link href={work.alt === "Table Up" ? "/work/tableup" : work.alt === "Remonnect" ? "/work/remonnect" : "#"}>
+                <Link href="#">
+                {/* <Link href={work.alt === "Table Up" ? "/work/tableup" : work.alt === "Remonnect" ? "/work/remonnect" : "#"}> */}
                   <div className="relative aspect-[4/3] flex items-center justify-center group cursor-pointer">
                     <Image 
                       src={work.src} 
@@ -60,8 +61,9 @@ export default function HomePage() {
                     {/* ホバーオーバーレイ */}
                     <div className="absolute inset-0 bg-black bg-opacity-10 opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
                       <div className="text-white text-center">
-                        <h3 className="text-3xl font-semibold mb-3">{work.alt}</h3>
-                        <p className="text-lg opacity-90">Click to view details</p>
+                        <h3 className="text-3xl font-semibold mb-3">Coming Soon</h3>
+                        {/* <h3 className="text-3xl font-semibold mb-3">{work.alt}</h3> */}
+                        {/* <p className="text-lg opacity-90">Click to view details</p> */}
                       </div>
                     </div>
                   </div>
