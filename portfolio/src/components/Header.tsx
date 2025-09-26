@@ -46,10 +46,10 @@ export default function Header() {
       <nav className="flex items-center gap-2 sm:gap-4">
         <Link href="/" className={getLinkStyle("/")}>Work</Link>
         <Link href="/about" className={getLinkStyle("/about")}>About</Link>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full">
+        <a href="https://www.linkedin.com/in/kie-yokozuka/" target="_blank" rel="noopener" className="p-2 hover:bg-[#6d5c57] rounded-full">
           <Image src="/images/InBug-White.png" alt="LinkedIn" width={24} height={24} />
         </a>
-        <a href="mailto:hello@example.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>
+        <a href="mailto:kie.yokozuka@gmail.com" className="p-2 hover:bg-[#6d5c57] rounded-full"><IconMail /></a>
       </nav>
     </header>
   );
