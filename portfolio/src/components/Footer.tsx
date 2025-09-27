@@ -30,8 +30,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="font-bold text-lg">Kie Yokozuka</span>
         <nav className="flex items-center gap-4 text-sm">
-          <Link href="/" className="flex items-center gap-1">🏠 Home</Link>
-          <Link href="/work" className="flex items-center gap-1"><IconWork /> Work</Link>
+          <Link href="/" className="flex items-center gap-1"><IconWork /> Work</Link>
           <Link href="/about" className="flex items-center gap-1"><IconAbout /> About</Link>
           <a href="https://www.linkedin.com/in/kie-yokozuka/" target="_blank" rel="noopener" className="flex items-center gap-1">
             <Image src="/images/InBug-White.png" alt="LinkedIn" width={24} height={24} />
