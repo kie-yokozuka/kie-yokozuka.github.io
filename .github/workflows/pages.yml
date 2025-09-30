@@ -2,10 +2,13 @@
 name: GitHub Pages (Next.js export)
 
 on:
-  workflow_dispatch:
   pull_request:
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -38,6 +41,7 @@ jobs:
           path: portfolio/out
 
   deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
