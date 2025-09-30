@@ -1,0 +1,8 @@
+# .github/workflows/smoke.yml
+name: Smoke
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello from actions"
