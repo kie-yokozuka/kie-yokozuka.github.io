@@ -1,10 +1,10 @@
-name: GitHub Pages (Next.js static export)
+# .github/workflows/pages.yml
+name: GitHub Pages (Next.js export)
 
 on:
-  pull_request:
-    branches: [ develop ]   # ← develop向けPRでプレビューを出す
-  push:
-    branches: [ main ]      # ← mainに入ったら本番公開
+  workflow_dispatch:     # ← Actionsタブから手動実行可
+  pull_request:          # ← まずは全PRで走らせて確認（後で develop に絞る）
+  push:                  # ← どのブランチへの push でも走る（動作確認用）
 
 permissions:
   contents: read
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npm run build     # output: 'export' なら buildで out/ 生成
+      - run: npm run build
       - run: |
           if [ ! -d out ]; then
             npx next export
