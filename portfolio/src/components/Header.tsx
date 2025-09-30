@@ -25,12 +25,15 @@ export default function Header() {
   const getLinkStyle = (href: string) => {
     let isActive = false;
     
+    // pathnameを正規化（末尾のスラッシュを削除）
+    const normalizedPathname = pathname?.replace(/\/$/, '') || '';
+    
     if (href === "/") {
       // Workリンクの場合、/（TOPページ）または/work/で始まるパスでアクティブ
-      isActive = pathname === "/" || (pathname ? pathname.startsWith("/work/") : false);
+      isActive = normalizedPathname === "" || normalizedPathname.startsWith("/work");
     } else {
-      // その他のリンクは完全一致
-      isActive = pathname === href;
+      // その他のリンクは完全一致（正規化後）
+      isActive = normalizedPathname === href;
     }
     
     return isActive 
@@ -41,7 +44,7 @@ export default function Header() {
   return (
     <header className="bg-[#4B3B39] text-white px-4 sm:px-12 py-4 flex items-center justify-between">
       <Link href="/" className="font-bold text-xl tracking-wide">
-        <Image src="/images/logo.png" alt="Logo" width={160} height={300} style={{width: "auto"}} />
+        <Image src="/images/logo.png" alt="Logo" width={160} height={300} style={{width: "160px", height: "auto"}} />
       </Link>
       <nav className="flex items-center gap-2 sm:gap-4">
         <Link href="/" className={getLinkStyle("/")}>Work</Link>
