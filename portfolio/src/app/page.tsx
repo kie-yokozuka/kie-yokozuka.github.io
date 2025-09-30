@@ -26,7 +26,7 @@ export default function HomePage() {
       <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-8 flex flex-col gap-12">
         {/* Hero */}
         <section className="pt-12 pb-6" id="about">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Hello! I'm Kie and a UI/UX designer.</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Hello! I&apos;m Kie and a UI/UX designer.</h1>
           <p className="mb-2 text-lg">Check out my works and say hello<span className="ml-1">👋</span></p>
           <p className="flex items-center gap-2 text-base">
             <span className="inline-block"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4B3B39" strokeWidth="2"/><path d="M8 12h8" stroke="#4B3B39" strokeWidth="2" strokeLinecap="round"/></svg></span>
