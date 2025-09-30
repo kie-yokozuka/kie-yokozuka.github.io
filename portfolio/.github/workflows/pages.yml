@@ -1,9 +1,10 @@
-name: GitHub Pages (Next.js export)
+name: GitHub Pages (Next.js static export)
 
 on:
+  pull_request:
+    branches: [ develop ]   # ← develop向けPRでプレビューを出す
   push:
-    branches: [ main ]      # main に push されたら本番公開
-  pull_request:             # PR が作られたらプレビュー
+    branches: [ main ]      # ← mainに入ったら本番公開
 
 permissions:
   contents: read
@@ -24,8 +25,11 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
-      - run: npm run export
+      - run: npm run build     # output: 'export' なら buildで out/ 生成
+      - run: |
+          if [ ! -d out ]; then
+            npx next export
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
