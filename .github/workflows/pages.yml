@@ -2,9 +2,10 @@
 name: GitHub Pages (Next.js export)
 
 on:
-  workflow_dispatch:     # ← Actionsタブから手動実行可
-  pull_request:          # ← まずは全PRで走らせて確認（後で develop に絞る）
-  push:                  # ← どのブランチへの push でも走る（動作確認用）
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -24,15 +25,17 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - run: |
-          if [ ! -d out ]; then
-            npx next export
-          fi
-      - uses: actions/upload-pages-artifact@v3
+          cache-dependency-path: portfolio/package-lock.json
+      - name: Install deps
+        run: npm ci
+        working-directory: portfolio
+      - name: Build (static export)
+        run: npm run build
+        working-directory: portfolio
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: portfolio/out
 
   deploy:
     needs: build
